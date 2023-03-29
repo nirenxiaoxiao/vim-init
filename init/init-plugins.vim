@@ -120,7 +120,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'tpope/vim-fugitive'
 
 	" 使用 ALT+E 来选择窗口
-	nmap <m-e> <Plug>(choosewin)
+	nmap <leader>e <Plug>(choosewin)
 
 	" 默认不显示 startify
 	let g:startify_disable_at_vimenter = 1
@@ -166,6 +166,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 
 	" 配对括号和引号自动补全
 	Plug 'Raimondi/delimitMate'
+	Plug 'terryma/vim-multiple-cursors'
 
 	" 提供 gist 接口
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
@@ -221,6 +222,7 @@ if index(g:bundle_group, 'tags') >= 0
 
 	" 禁止 gutentags 自动链接 gtags 数据库
 	let g:gutentags_auto_add_gtags_cscope = 0
+	let g:gutentags_define_advanced_commands = 1
 endif
 
 
@@ -504,16 +506,16 @@ if index(g:bundle_group, 'leaderf') >= 0
 		let g:ctrlp_working_path = 0
 
 		" CTRL+p 打开文件模糊匹配
-		noremap <c-p> :CtrlP<cr>
+		noremap <leader>p :CtrlP<cr>
 
 		" CTRL+n 打开最近访问过的文件的匹配
-		noremap <c-n> :CtrlPMRUFiles<cr>
+		noremap <leader>pn :CtrlPMRUFiles<cr>
 
 		" ALT+p 显示当前文件的函数列表
-		noremap <m-p> :CtrlPFunky<cr>
+		noremap <leader>pp :CtrlPFunky<cr>
 
 		" ALT+n 匹配 buffer
-		noremap <m-n> :CtrlPBuffer<cr>
+		noremap <leader>pb :CtrlPBuffer<cr>
 	endif
 endif
 

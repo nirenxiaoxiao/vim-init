@@ -775,7 +775,7 @@ function! s:infer_properties(name, repo)
       if repo !~ '/'
         throw printf('Invalid argument: %s (implicit `vim-scripts'' expansion is deprecated)', repo)
       endif
-      let fmt = get(g:, 'plug_url_format', 'https://git::@github.com/%s.git')
+      let fmt = get(g:, 'plug_url_format', 'git@github.com:%s.git')
       let uri = printf(fmt, repo)
     endif
     return { 'dir': s:dirpath(g:plug_home.'/'.a:name), 'uri': uri }
@@ -1606,7 +1606,7 @@ import vim
 G_NVIM = vim.eval("has('nvim')") == '1'
 G_PULL = vim.eval('s:update.pull') == '1'
 G_RETRIES = int(vim.eval('get(g:, "plug_retries", 2)')) + 1
-G_TIMEOUT = int(vim.eval('get(g:, "plug_timeout", 60)'))
+G_TIMEOUT = int(vim.eval('get(g:, "plug_timeout", 220)'))
 G_CLONE_OPT = ' '.join(vim.eval('s:clone_opt'))
 G_PROGRESS = vim.eval('s:progress_opt(1)')
 G_LOG_PROB = 1.0 / int(vim.eval('s:update.threads'))

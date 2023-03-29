@@ -331,3 +331,44 @@ else
 endif
 
 
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
+nmap <leader>gJ 9999<leader>gj
+nmap <leader>gK 9999<leader>gk
+nmap ]c <plug>(signify-next-hunk)
+nmap [c <plug>(signify-prev-hunk)
+nmap ]]c 9999<leader>gj
+nmap [[c 9999<leader>gk
+
+set updatetime=100
+" fugi
+nnoremap <leader>gd :SignifyDiff<cr>
+nnoremap <leader>gp :SignifyHunkDiff<cr>
+nnoremap <leader>gu :SignifyHunkUndo<cr>
+nnoremap <space>hu :SignifyHunkUndo<cr>
+
+
+nmap     <leader>ff <Plug>CtrlSFPrompt
+vmap     <leader>ff <Plug>CtrlSFVwordPath
+vmap     <leader>fw <Plug>CtrlSFVwordExec
+nmap     <leader>fn <Plug>CtrlSFCwordPath
+nmap     <leader>fp <Plug>CtrlSFPwordPath
+nnoremap <leader>fo :CtrlSFOpen<CR>
+nnoremap <leader>ft :CtrlSFToggle<CR>
+inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
+
+" multi cursor
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+" let g:multi_cursor_start_word_key      = '<C-n>'
+" let g:multi_cursor_select_all_word_key = '<A-n>'
+" let g:multi_cursor_start_key           = 'g<C-n>'
+" let g:multi_cursor_select_all_key      = 'g<A-n>'
+" let g:multi_cursor_next_key            = '<C-n>'
+" let g:multi_cursor_prev_key            = '<C-p>'
+" let g:multi_cursor_skip_key            = '<C-x>'
+" let g:multi_cursor_quit_key            = '<Esc>'
+let g:multi_cursor_start_word_key      = '<leader><C-n>'
+let g:multi_cursor_select_all_word_key = '<leader><A-n>'
+let g:multi_cursor_start_key           = 'g<leader><C-n>'
+let g:multi_cursor_select_all_key      = 'g<leader><A-n>'
